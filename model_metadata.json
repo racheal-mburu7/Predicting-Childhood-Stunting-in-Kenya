@@ -4,7 +4,11 @@
     "birth_spacing_months",
     "birthweight_kg",
     "breastfeeding_months",
-    "anc_visits"
+    "anc_visits",
+    "bcg_received",
+    "polio_doses",
+    "dptih_doses",
+    "rotavirus_doses"
   ],
   "categorical_cols": [
     "v024_label",
@@ -19,8 +23,8 @@
     "Normal growth",
     "Severe stunting"
   ],
-  "test_macro_f1": 0.39203213773409934,
-  "test_roc_auc": 0.6689659551156457,
+  "test_macro_f1": 0.3946128634747103,
+  "test_roc_auc": 0.675239397711325,
   "baseline_macro_f1": 0.3000105786522797,
   "category_values": {
     "v024_label": [

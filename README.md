@@ -5,6 +5,13 @@ details and get a stunting-risk prediction (Severe / Moderate / Normal
 growth) plus plain-language dietary guidance. Built on the model trained in
 `Predicting_Childhood_Stunting_in_Kenya.ipynb`.
 
+The model now also uses vaccination history \u2014 BCG, polio, DPT-HepB-Hib
+(pentavalent, sometimes called "DPTH"), and rotavirus dose counts \u2014
+sourced from the KDHS immunization module. These fields only appear in the
+app's **Health worker** mode, since they require reading a vaccination card;
+in **Parent / caregiver** mode they're left unknown and the model falls back
+to its learned defaults for them.
+
 ## Files
 
 - `app.py` — the app itself

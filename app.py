@@ -179,6 +179,18 @@ with st.form("predict_form"):
             min_value=0, max_value=30, value=4, step=1,
         )
 
+    bcg = polio_doses = dptih_doses = rota_doses = None
+    if is_medic:
+        st.subheader("Vaccination history")
+        st.caption("From the child's vaccination card, if available.")
+
+        bcg_choice = st.radio("BCG", ["Not given", "Given"], horizontal=True, index=0)
+        bcg = 1 if bcg_choice == "Given" else 0
+
+        polio_doses = st.slider("Polio doses received (of 3)", min_value=0, max_value=3, value=0)
+        dptih_doses = st.slider("DPT-HepB-Hib / Pentavalent doses received (of 3)", min_value=0, max_value=3, value=0)
+        rota_doses = st.slider("Rotavirus doses received (of 2)", min_value=0, max_value=2, value=0)
+
     submitted = st.form_submit_button("Predict stunting risk", use_container_width=True, type="primary")
 
 if submitted:
@@ -188,6 +200,10 @@ if submitted:
         "birthweight_kg": birthweight if birthweight is not None else np.nan,
         "breastfeeding_months": breastfeeding_months,
         "anc_visits": anc_visits if anc_visits is not None else np.nan,
+        "bcg_received": bcg if bcg is not None else np.nan,
+        "polio_doses": polio_doses if polio_doses is not None else np.nan,
+        "dptih_doses": dptih_doses if dptih_doses is not None else np.nan,
+        "rotavirus_doses": rota_doses if rota_doses is not None else np.nan,
         "v024_label": county.lower(),
         "v025_label": residence.lower(),
         "v106_label": education.lower(),
