@@ -1,4 +1,4 @@
-# Child Stunting Risk Predictor — App
+# Childhood Stunting Risk Predictor
 
 A small Streamlit app that lets a parent or a health worker enter a child's
 details and get a stunting-risk prediction (Severe / Moderate / Normal
